@@ -8,9 +8,18 @@
     <link rel="stylesheet" href="{% static 'css/main.min.css' %}">
     <title>{% block title %}{% endblock title %}</title>
 </head>
-<body>
-    <div class =" m-10 p-10 bg-red-300 rounded-xl border border-black">blue</div>
-    {% block content %}
-    {% endblock content %}
+<body style="background-image: url('{% static 'images/tlo.jpg' %}'); background-size: cover;">
+<div class="text-zinc-300">
+    <div class="flex justify-evenly min-w-full bg-amber-200 text-black">
+        <p class="py-6 px-6 border border-r-2 border-l-2 border-black"><a href="/" class="tracking-wide text-6xl">Search app</a></p>
+    </div>
+    
+    <div class="px-4 py-4 flex justify-center items-center">
+        <div class="w-64 h-96 rounded-xl bg-gray-300">
+            {% block content %}
+            {% endblock content %}
+        </div>
+    </div>
+</div>
 </body>
 </html>
