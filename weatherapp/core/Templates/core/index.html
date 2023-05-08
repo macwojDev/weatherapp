@@ -1,0 +1,15 @@
+{% extends 'core/base.html' %}
+
+
+{% block title %} Index {% endblock title %}
+{% block content %}
+<p class="flex justify-center items-center h-16 mx-2 my-2 text-2xl bg-slate-400 rounded-xl"> Find the Weather in Your city! </p>
+<form action="" method="get">
+    <div class="m-3 flex justify-center"><label for="city" class="text-xl font-semibold"> Which city are u interested in? </label></div>
+    <div class="m-3 flex justify-center"><input type="text" name="city" placeholder=" city..." class="rounded-xl w-4/5 h-9"></div>
+    <div class=" flex justify-center m-3">
+        <button class="py-4 px-8 text-xl bg-green-500 hover:bg-green-700 rounded-xl" type="submit">Confirm</button>
+    </div>
+</form>
+{% endblock content %}
+
