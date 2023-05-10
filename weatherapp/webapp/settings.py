@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     'django_browser_reload',
     'core',
+    'selenium',
 ]
 NPM_BIN_PATH = 'C:\\Program Files\\nodejs\\npm.cmd'
 
