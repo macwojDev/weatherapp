@@ -511,6 +511,9 @@ video {
 .min-w-full {
   min-width: 100%;
 }
+.flex-row {
+  flex-direction: row;
+}
 .items-center {
   align-items: center;
 }
