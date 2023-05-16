@@ -8,21 +8,21 @@
     <div class="m-3 flex justify-center"><label for="city" class="text-xl font-semibold"> </label></div>
     <div class="m-3 flex justify-center"><input type="text" name="city" placeholder=" city..." class="rounded-xl w-4/5 h-9"></div>
     <div class=" flex justify-center m-3">
-        <button class="py-4 px-8 text-xl bg-green-500 hover:bg-green-700 rounded-xl" type="submit">Confirm</button>
+        <button class="py-4 px-8 text-xl bg-green-500 hover:bg-green-700 rounded-xl" type="submit">Potwierdź</button>
     </div>
 </form>
 {% if city %}
-    <p class="flex justify-center flex-row">
-        <h2>Pogoda w {{region}}:</h2>
-        <h2>Temperatura: {{temperatura}} °C </h2>
-        <h2>Wilgotność powietrza: {{wilgotnosc}}:</h2>
-        <h2>Szansa na opady: {{opady}}</h2>
-        <h2>Wiatr: {{wiatr}}</h2>
-    </p>
+    <div class="py-4 flex justify-center items-center flex-col font-semibold text-xl">
+        <p>Pogoda w {{region}}:</p>
+        <p>Temperatura: {{temperatura}} °C </p>
+        <p>Wilgotność powietrza: {{wilgotnosc}}</p>
+        <p>Szansa na opady: {{opady}}</p>
+        <p>Wiatr: {{wiatr}}</p>
+    </div>
 {% elif  AttributeError %}
-    <p class="flex justify-center flex-row">
-        <h2>Nie posiadam danych dla podanego miasta, upewnij się, że dobrze wpisałeś jego nazwe!</h2>
-    </p>
+    <div class="py-4 flex justify-center items-center flex-col font-semibold text-xl">
+        <p>Nie posiadam danych dla podanego miasta, upewnij się, że dobrze wpisałeś jego nazwe!</p>
+    </div>
 {% endif %}
 {% endblock content %}
 
