@@ -9,7 +9,7 @@ chrome_options.add_argument('--headless')
 
 driver = webdriver.Chrome(options=chrome_options)
 
-url = 'https://www.google.pl'
+url = 'https://www.google.com'
 driver.get(url)
 accept_button = driver.find_element(by='id', value='L2AGLb')
 accept_button.click()
@@ -29,12 +29,13 @@ def index(request):
         city = request.GET.get('city')
         get_html_content(city)
         soup = BeautifulSoup(driver.page_source, 'html.parser')
-        region = soup.find('span', attrs={'class':'BBwThe'}).text
-        temperatura = soup.find('span', attrs={'id':'wob_tm'}).text
-        wilgotność = soup.find('span', attrs={'id':'wob_hm'}).text
-        opady = soup.find('span', attrs={'id':'wob_pp'}).text
-        wiatr = soup.find('span', attrs={'id':'wob_ws'}).text
-        context = {
+        try:
+            region = soup.find('span', attrs={'class':'BBwThe'}).text
+            temperatura = soup.find('span', attrs={'id':'wob_tm'}).text
+            wilgotność = soup.find('span', attrs={'id':'wob_hm'}).text
+            opady = soup.find('span', attrs={'id':'wob_pp'}).text
+            wiatr = soup.find('span', attrs={'id':'wob_ws'}).text
+            context = {
                 'city':city,
                 'region' : region,
                 'temperatura' : temperatura,
@@ -42,5 +43,9 @@ def index(request):
                 'opady':opady,
                 'wiatr':wiatr
                 }
+        except AttributeError:
+            context = {
+                'AttributeError':AttributeError
+            }
     return render(request, 'core/index.html', context)
 

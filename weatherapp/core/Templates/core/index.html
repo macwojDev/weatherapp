@@ -19,6 +19,10 @@
         <h2>Szansa na opady: {{opady}}</h2>
         <h2>Wiatr: {{wiatr}}</h2>
     </p>
+{% elif  AttributeError %}
+    <p class="flex justify-center flex-row">
+        <h2>Nie posiadam danych dla podanego miasta, upewnij się, że dobrze wpisałeś jego nazwe!</h2>
+    </p>
 {% endif %}
 {% endblock content %}
 
